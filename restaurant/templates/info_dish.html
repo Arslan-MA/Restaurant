@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        body {
+            background-image: url('https://top-fon.com/uploads/posts/2023-02/1675240327_top-fon-com-p-fon-dlya-prezentatsii-kafe-205.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .header {
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background-color: rgb(28, 27, 32);
+            margin-bottom: 40px;
+        }
+
+        .btn_h {
+            padding: 8px;
+            width: 260px;
+            background-color: rgb(233, 90, 38);
+            color: rgb(230, 230, 230);
+        }
+
+        .block {
+            margin: auto;
+            border: 3px solid;
+            border-radius: 25px;
+            width: 1200px;
+            padding: 10px;
+            background-color: rgb(28, 27, 32);
+            color: rgb(230, 230, 230);
+        }
+
+        .tag {
+            margin: 20px;
+            margin-bottom: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="{% url 'main_page' %}"><button type="button" class="btn_h">Меню блюд</button></a>
+        <a href="{% url 'add_dish' %}"><button type="button" class="btn_h">Добавить блюдо</button></a>
+    </div>
+    <h1 style="font-size: 35px;
+    margin-bottom: 10px;
+    color: rgb(230, 230, 230);">Подробная информация о блюде</h1>
+    <div class="block">
+        <p class="tag">Название блюда: {{ dish.name }}</p>
+        <p class="tag">Категория блюда: {{ dish.category }}</p>
+        <p class="tag">Описание блюда:<br> {{ dish.description }}</p>
+        <p class="tag">Цена блюда: {{ dish.price }}</p>
+    </div>
+</body>
+
+</html>
